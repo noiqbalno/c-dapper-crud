@@ -24,7 +24,7 @@ internal class Program
         //var supById = supplierRepo.FindById(27);
         //Console.WriteLine(supById);
 
-        ///creaste ERRR
+        ///create
         //var newSupps = new Supplier
         //{
         //    CompanyName = "x com",
@@ -35,6 +35,19 @@ internal class Program
 
         //newSupps = supplierRepo.Save(ref newSupps);
         //Console.WriteLine(newSupps.ToString());
+
+        ///update
+        //var updateSupps = new Supplier
+        //{
+        //    SupplierID = 31,
+        //    CompanyName = "x com update",
+        //    ContactName = "ilon update",
+        //    ContactTitle = "ceo update",
+        //    HomePage = "ex.com update"
+        //};
+
+        //updateSupps = supplierRepo.Update(updateSupps);
+        //Console.WriteLine(updateSupps.ToString());
 
         //delete 
 

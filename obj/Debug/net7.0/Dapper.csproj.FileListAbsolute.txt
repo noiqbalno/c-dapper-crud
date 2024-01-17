@@ -34,3 +34,4 @@ C:\bootcamp\Batch28\coding\Batch28Solution\Dapper\obj\Debug\net7.0\refint\Dapper
 C:\bootcamp\Batch28\coding\Batch28Solution\Dapper\obj\Debug\net7.0\DapperCrud.pdb
 C:\bootcamp\Batch28\coding\Batch28Solution\Dapper\obj\Debug\net7.0\Dapper.genruntimeconfig.cache
 C:\bootcamp\Batch28\coding\Batch28Solution\Dapper\obj\Debug\net7.0\ref\DapperCrud.dll
+C:\bootcamp\Batch28\coding\Batch28Solution\Dapper\obj\Debug\net7.0\Dapper.sourcelink.json

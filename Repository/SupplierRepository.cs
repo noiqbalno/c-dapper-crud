@@ -21,7 +21,7 @@ namespace DapperCrud.Repository
         {
             SqlCommandModel model = new SqlCommandModel()
             {
-                CommandText = "insert into Suppliers (CompanyName,ContactName,ContactTitle, HomePage) values (@companyName,@contactName,@contactTitle, @homePage);",
+                CommandText = "insert into Suppliers (CompanyName,ContactName,ContactTitle,HomePage) values (@companyName,@contactName,@contactTitle,@homePage);",
                 CommandType = CommandType.Text,
                 CommandParameters = new SqlCommandParameterModel[] {
                     new SqlCommandParameterModel() {
@@ -33,7 +33,8 @@ namespace DapperCrud.Repository
                         ParameterName = "@companyName",
                         DataType = DbType.String,
                         Value = supplier.CompanyName
-                    },
+                    }
+                    ,
                     new SqlCommandParameterModel() {
                         ParameterName = "@contactName",
                         DataType = DbType.String,
@@ -53,6 +54,7 @@ namespace DapperCrud.Repository
             };
 
             _dapperDbContext.ExecuteNonQuery(model);
+            _dapperDbContext.Dispose();
 
             return supplier;
         }
@@ -96,9 +98,46 @@ namespace DapperCrud.Repository
             return supplier;
         }
 
-        public Supplier UpdateSupplier(Supplier supplier)
+        public override Supplier Update(Supplier supplier)
         {
-            throw new NotImplementedException();
+            SqlCommandModel model = new SqlCommandModel()
+            {
+                CommandText = "UPDATE Suppliers SET CompanyName=@companyName, ContactName=@contactName, ContactTitle=@contactTitle, HomePage=@homePage WHERE SupplierID=@suppId",
+                CommandType = CommandType.Text,
+                CommandParameters = new SqlCommandParameterModel[] {
+                    new SqlCommandParameterModel() {
+                        ParameterName = "@suppId",
+                        DataType = DbType.Int32,
+                        Value = supplier.SupplierID
+                    },
+                    new SqlCommandParameterModel() {
+                        ParameterName = "@companyName",
+                        DataType = DbType.String,
+                        Value = supplier.CompanyName
+                    }
+                    ,
+                    new SqlCommandParameterModel() {
+                        ParameterName = "@contactName",
+                        DataType = DbType.String,
+                        Value = supplier.ContactName
+                    },
+                    new SqlCommandParameterModel() {
+                        ParameterName = "@contactTitle",
+                        DataType = DbType.String,
+                        Value = supplier.ContactTitle
+                    },
+                    new SqlCommandParameterModel() {
+                        ParameterName = "@homePage",
+                        DataType = DbType.String,
+                        Value = supplier.HomePage
+                    }
+                }
+            };
+
+            _dapperDbContext.ExecuteNonQuery(model);
+            _dapperDbContext.Dispose();
+
+            return supplier;
         }
     }
 }

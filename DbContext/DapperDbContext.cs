@@ -60,7 +60,7 @@ namespace DapperCrud.DbContext
                 _dbConnection.Query(
                 model.CommandText,
                 parameters,
-                commandType: CommandType.StoredProcedure
+                commandType: CommandType.Text
             );
             }
             finally
